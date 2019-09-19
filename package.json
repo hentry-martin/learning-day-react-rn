@@ -1,0 +1,54 @@
+{
+  "name": "read-folder-name",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test-web": "fe-scripts test-web",
+    "test-rn": "fe-scripts test-rn",
+    "build-web": "fe-scripts build-web",
+    "lint": "fe-scripts lint",
+    "start-web": "fe-scripts start-web",
+    "start-rn": "fe-scripts start-rn",
+    "e2e-web": "fe-scripts e2e-web",
+    "build-storybook": "fe-scripts build-storybook"
+  },
+  "browserslist": [
+    "> 1%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "main": "./build",
+  "files": [
+    "build",
+    "translations"
+  ],
+  "peerDependencies": {
+    "@storybook/addon-actions": "*",
+    "@storybook/react": "*",
+    "@storybook/react-native": "*",
+    "enzyme": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-intl": "*",
+    "react-native": "*",
+    "styled-components": "*"
+  },
+  "devDependencies": {
+    "@goeuro/fe-scripts": "1.x"
+  },
+  "dependencies": {
+    "@goeuro/frontend-components": "14"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,ts,tsx,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
